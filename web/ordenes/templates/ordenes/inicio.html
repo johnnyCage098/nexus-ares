@@ -1,0 +1,189 @@
+{% load static %}
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEXUS ARES</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+:root{--red:#ff2339;--bg:#07070b;--cyan:#20edff;--gold:#ffc21b}*{box-sizing:border-box}body{margin:0;color:#fff;font-family:Inter,Arial,sans-serif;background:#050509 url('{% static "ordenes/fondo_nexus.png" %}') center center/cover fixed no-repeat}body:before{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.48),rgba(0,0,0,.28) 52%,rgba(0,0,0,.05));pointer-events:none}.app{position:relative;display:flex;min-height:100vh}.sidebar{width:272px;flex:none;min-height:100vh;padding:46px 15px 28px;background:linear-gradient(145deg,rgba(3,5,12,.94),rgba(6,3,10,.88));border-right:1px solid #fa2335;display:flex;flex-direction:column;box-shadow:10px 0 32px #0008}.logo{text-align:center;font:700 37px/0.84 Rajdhani,Arial,sans-serif;letter-spacing:2px;text-shadow:0 0 14px #fff6;margin:8px 0 74px}.logo span{display:block;color:var(--red);text-shadow:0 0 17px #ff203b}.nav{display:grid;gap:9px}.nav a,.nav button{display:flex;align-items:center;gap:19px;padding:14px 18px;color:white;background:transparent;border:1px solid transparent;text-decoration:none;text-align:left;font:500 17px Inter,Arial;cursor:pointer}.nav a:hover,.nav button:hover,.nav .active{background:linear-gradient(90deg,#a00016b8,#460008a6);border-color:var(--red);box-shadow:0 0 17px #ff153e8a;clip-path:polygon(0 0,95% 0,100% 25%,100% 75%,95% 100%,0 100%)}.ico{font:700 26px Rajdhani;min-width:26px;text-align:center}.navtitle{font-size:13px;letter-spacing:4px;color:#ddd;margin:23px 19px 12px;border-top:1px solid var(--red);padding-top:26px}.uth{margin-top:auto;text-align:center;font:700 italic 42px Rajdhani;letter-spacing:2px;text-shadow:0 0 13px #fff7}.uth small{display:block;font:600 14px Inter;letter-spacing:2px}.main{flex:1;min-width:0;padding:95px 42px 55px}.eyebrow{letter-spacing:6px;font-size:13px;font-weight:600;text-shadow:0 2px 5px #000}.heading{font:700 clamp(46px,5vw,68px)/1 Rajdhani;margin:12px 0 3px;text-shadow:0 0 15px #fff8}.heading em{font-style:normal;color:var(--red);text-shadow:0 0 17px #ff001f}.subtitle{letter-spacing:3px;font-size:14px;text-shadow:0 2px 5px #000}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1050px;margin:39px 0 30px}.stat,.panel{background:linear-gradient(130deg,rgba(27,0,6,.93),rgba(7,9,17,.91));border:2px solid #ff2034;box-shadow:inset 0 0 24px #b600172e,0 0 16px #f900295c;clip-path:polygon(7% 0,100% 0,100% 83%,94% 100%,0 100%,0 22%)}.stat{min-height:122px;padding:20px 27px;display:flex;align-items:center;gap:25px}.stat .symbol{font-size:39px;color:var(--red);text-shadow:0 0 13px #ff193c}.stat strong{display:block;font:700 48px/0.95 Rajdhani;letter-spacing:2px}.stat small{display:block;font:600 14px/1.2 Rajdhani;letter-spacing:2px}.panel{clip-path:polygon(2% 0,98% 0,100% 6%,100% 94%,98% 100%,2% 100%,0 94%,0 6%);padding:32px 25px 26px;background:linear-gradient(125deg,rgba(17,0,7,.96),rgba(3,8,17,.95) 55%,rgba(28,0,6,.95));max-width:1350px}.panelhead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:19px}.panel h2{font:700 34px Rajdhani;margin:0}.panel h2:before{content:'❯❯';color:var(--red);margin-right:12px;font-size:27px}.panel p{margin:0 0 0 50px;color:#bbb;font-size:15px}.newbtn{color:white;font-weight:700;letter-spacing:1px;padding:13px 22px;background:#8b0014;border:2px solid #ff344a;box-shadow:0 0 16px #ff153a9e;cursor:pointer;white-space:nowrap}.newbtn:hover{background:#cf0926}.tablewrap{overflow:auto;border:1px solid #e92137;box-shadow:0 0 12px #c6001b50}table{border-collapse:collapse;width:100%;min-width:800px}th{text-align:left;background:linear-gradient(#4c0c19,#8c0b20);padding:14px 18px;font-size:14px;border-bottom:2px solid #ff2940}td{padding:12px 18px;border-bottom:1px solid #7b2632;background:#050408c7;font-size:15px}tbody tr:last-child td{border-bottom:0}tbody tr:hover td{background:#280510e6}.status{display:inline-block;min-width:124px;text-align:center;padding:5px 10px;font-weight:700;font-size:13px;clip-path:polygon(10% 0,100% 0,100% 72%,90% 100%,0 100%,0 28%);border:1px solid currentColor}.pagada{color:var(--cyan);background:#00778c44;filter:drop-shadow(0 0 5px #00f3ff)}.pendiente{color:var(--gold);background:#7a540044;filter:drop-shadow(0 0 5px #ffba00)}.anulada{color:#ff4353;background:#9b001a44;filter:drop-shadow(0 0 5px #ff183a)}.actions{display:flex;gap:7px}.action{background:#12141e;border:1px solid #8d9bb0;color:#fff;padding:7px 11px;cursor:pointer}.action:hover{border-color:white}.action[disabled]{opacity:.45;cursor:not-allowed}.error{color:#ffbdc5;margin:15px 0}.note{font-size:12px;color:#a9a9b5;margin-top:12px}.modal{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:5;padding:20px}.modal.show{display:flex}.modalbox{background:#0d0b13;border:2px solid var(--red);box-shadow:0 0 30px #e9003d;padding:30px;min-width:min(400px,95vw)}.modalbox h3{font:700 30px Rajdhani;margin:0 0 16px}.modalbox p{margin:9px 0}.modalbox button{margin-top:16px;padding:9px 20px;background:#a30020;color:white;border:1px solid var(--red);cursor:pointer}@media(max-width:1100px){.sidebar{width:210px}.main{padding:70px 22px}.stats{gap:12px}.stat{padding:15px;gap:12px}.stat strong{font-size:36px}}@media(max-width:740px){.app{display:block}.sidebar{width:100%;min-height:auto;padding:15px}.logo{margin:0 0 15px}.nav{grid-template-columns:repeat(2,1fr)}.nav a,.nav button{font-size:13px;padding:9px}.navtitle,.uth{display:none}.main{padding:30px 14px}.stats{grid-template-columns:1fr}.panel{padding:22px 10px}.panelhead{align-items:flex-start;flex-direction:column}.panel h2{font-size:27px}}
+</style></head><body><div class="app"><aside class="sidebar"><div class="logo">NEXUS<span>ARES</span></div><nav class="nav"><a href="/" class="active"><span class="ico">▦</span>Inicio</a><a href="#ordenes"><span class="ico">⬡</span>Órdenes</a><button type="button" onclick="informar()"><span class="ico">⊕</span>Nueva orden</button><button type="button" onclick="informar()"><span class="ico">▱</span>Productos</button><a href="http://localhost:5000/health" target="_blank" rel="noopener"><span class="ico">⌁</span>Estado API</a></nav><div class="navtitle">ARQUITECTURA</div><nav class="nav"><button type="button" onclick="arquitectura()"><span class="ico">⬡</span>Docker Compose</button><button type="button" onclick="arquitectura()"><span class="ico">♧</span>Contenedores</button></nav><div class="uth">❧ UTH ❧<small>GRUPO 01</small></div></aside><main class="main"><div class="eyebrow">UTH // ARQUITECTURA DE COMPUTADORAS</div><h1 class="heading">NEXUS <em>ARES</em></h1><div class="subtitle">SISTEMA DE GESTIÓN DE ÓRDENES DE VENTA</div><section class="stats"><div class="stat"><span class="symbol">🛒</span><div><strong>{{ ordenes|length|stringformat:'02d' }}</strong><small>ÓRDENES<br>REGISTRADAS</small></div></div><div class="stat"><span class="symbol">◷</span><div><strong id="pending">00</strong><small>PENDIENTES</small></div></div><div class="stat"><span class="symbol">▱</span><div><strong>03</strong><small>SERVICIOS<br>DEL SISTEMA</small></div></div></section><section class="panel" id="ordenes"><div class="panelhead"><div><h2>ÓRDENES DE VENTA</h2><p>Listado de órdenes almacenadas en SQL Server</p></div><button class="newbtn" onclick="informar()">＋ NUEVA ORDEN</button></div>{% if error %}<div class="error">{{ error }}</div>{% endif %}<div class="tablewrap"><table><thead><tr><th>#</th><th>CLIENTE</th><th>FECHA</th><th>ESTADO</th><th>TOTAL</th><th>ACCIONES</th></tr></thead><tbody>{% for orden in ordenes %}<tr><td>{{ orden.id }}</td><td>{{ orden.cliente }}</td><td>{{ orden.fecha }}</td><td><span class="status {% if orden.estado == 'Pagada' %}pagada{% elif orden.estado == 'Pendiente' %}pendiente{% else %}anulada{% endif %}">{{ orden.estado|upper }}</span></td><td>L {{ orden.total|floatformat:2 }}</td><td><div class="actions"><button class="action" type="button" aria-label="Ver orden" onclick="verOrden(this)" data-id="{{ orden.id }}" data-cliente="{{ orden.cliente }}" data-fecha="{{ orden.fecha }}" data-estado="{{ orden.estado }}" data-total="{{ orden.total }}">◉</button><button class="action" disabled title="Edición pendiente de implementar">✎</button><button class="action" disabled title="Eliminación pendiente de implementar">▤</button></div></td></tr>{% empty %}<tr><td colspan="6">No hay órdenes disponibles.</td></tr>{% endfor %}</tbody></table></div><div class="note">Los botones de edición, eliminación y creación requieren implementar sus endpoints en la API.</div></section></main></div><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalbox"><h3 id="modalTitle">Detalle de orden</h3><div id="detalle"></div><button onclick="cerrar()">Cerrar</button></div></div><script>
+const filas=[...document.querySelectorAll('tbody tr')];document.getElementById('pending').textContent=String(filas.filter(r=>r.querySelector('.pendiente')).length).padStart(2,'0');function informar(){alert('Esta función aún necesita un endpoint de creación o edición en Flask.');}function arquitectura(){alert('Los servicios se administran desde Docker Compose. Verifica su estado con: docker compose ps');}function verOrden(b){const d=b.dataset;const div=document.getElementById('detalle');div.replaceChildren();for(const [label,value] of [['ID',d.id],['Cliente',d.cliente],['Fecha',d.fecha],['Estado',d.estado],['Total','L '+d.total]]){const p=document.createElement('p');p.textContent=label+': '+value;div.appendChild(p)}document.getElementById('modal').classList.add('show')}function cerrar(){document.getElementById('modal').classList.remove('show')}document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')cerrar()});document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrar()});
+
+</script>
+
+<!-- FORMULARIO CRUD NEXUS ARES -->
+<div id="crudModal" class="modal" role="dialog" aria-modal="true">
+  <div class="modalbox" style="width:440px;max-width:95vw">
+    <h3 id="crudTitulo">Nueva orden</h3>
+
+    <form id="crudForm" method="post" action="/crear/">
+      {% csrf_token %}
+
+      <label for="crudCliente">CLIENTE</label>
+      <input id="crudCliente" name="cliente" required
+        style="width:100%;padding:12px;margin:8px 0 15px;background:#11131d;color:white;border:1px solid #ff2339">
+
+      <label for="crudFecha">FECHA</label>
+      <input id="crudFecha" name="fecha" type="date" required
+        style="width:100%;padding:12px;margin:8px 0 15px;background:#11131d;color:white;border:1px solid #ff2339">
+
+      <label for="crudEstado">ESTADO</label>
+      <select id="crudEstado" name="estado"
+        style="width:100%;padding:12px;margin:8px 0 15px;background:#11131d;color:white;border:1px solid #ff2339">
+        <option value="Pendiente">Pendiente</option>
+        <option value="Pagada">Pagada</option>
+        <option value="Anulada">Anulada</option>
+      </select>
+
+      <div style="display:flex;gap:12px;justify-content:flex-end">
+        <button type="button" onclick="cerrarCrud()">Cancelar</button>
+        <button type="submit">GUARDAR</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function cerrarCrud() {
+  document.getElementById("crudModal").classList.remove("show");
+}
+
+function nuevaOrden() {
+  const form = document.getElementById("crudForm");
+  form.action = "/crear/";
+  form.reset();
+
+  document.getElementById("crudTitulo").textContent = "NUEVA ORDEN";
+  document.getElementById("crudFecha").value =
+    new Date().toLocaleDateString("en-CA");
+
+  document.getElementById("crudModal").classList.add("show");
+}
+
+function editarOrden(boton) {
+  const datos = boton.closest("tr").querySelector('[data-id]').dataset;
+
+  document.getElementById("crudTitulo").textContent = "EDITAR ORDEN";
+  document.getElementById("crudForm").action =
+    "/editar/" + datos.id + "/";
+
+  document.getElementById("crudCliente").value = datos.cliente;
+  document.getElementById("crudFecha").value = datos.fecha;
+  document.getElementById("crudEstado").value = datos.estado;
+
+  document.getElementById("crudModal").classList.add("show");
+}
+
+function eliminarOrden(boton) {
+  const datos = boton.closest("tr").querySelector('[data-id]').dataset;
+
+  if (!confirm("¿Eliminar definitivamente la orden de " +
+               datos.cliente + "?")) {
+    return;
+  }
+
+  const formulario = document.createElement("form");
+  formulario.method = "POST";
+  formulario.action = "/eliminar/" + datos.id + "/";
+
+  const token = document.querySelector(
+    "#crudForm [name=csrfmiddlewaretoken]"
+  ).cloneNode(true);
+
+  formulario.appendChild(token);
+  document.body.appendChild(formulario);
+  formulario.submit();
+}
+
+// Conectar los dos botones de Nueva orden
+document.querySelectorAll(".nav button, .newbtn").forEach(boton => {
+  if (boton.textContent.includes("Nueva orden") ||
+      boton.textContent.includes("NUEVA ORDEN")) {
+    boton.addEventListener("click", function(evento) {
+      evento.preventDefault();
+      evento.stopImmediatePropagation();
+      nuevaOrden();
+    }, true);
+  }
+});
+
+// Activar los botones de editar y eliminar de cada fila
+document.querySelectorAll("tbody tr").forEach(fila => {
+  const botones = fila.querySelectorAll(".actions .action");
+
+  if (botones.length >= 3) {
+    botones[1].disabled = false;
+    botones[1].title = "Editar orden";
+    botones[1].addEventListener("click", () => editarOrden(botones[1]));
+
+    botones[2].disabled = false;
+    botones[2].title = "Eliminar orden";
+    botones[2].addEventListener("click", () => eliminarOrden(botones[2]));
+  }
+});
+
+// Cerrar el formulario al hacer clic fuera
+document.getElementById("crudModal").addEventListener("click", e => {
+  if (e.target.id === "crudModal") cerrarCrud();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") cerrarCrud();
+});
+</script>
+
+
+<div id="productoModal" class="modal">
+  <div class="modalbox" style="width:440px;max-width:95vw">
+    <h3>AGREGAR PRODUCTO</h3>
+
+    <form id="productoForm" method="post">
+      {% csrf_token %}
+
+      <label>PRODUCTO</label>
+      <input name="producto" required
+        style="width:100%;padding:12px;margin:8px 0 15px;background:#11131d;color:white;border:1px solid #ff2339">
+
+      <label>CANTIDAD</label>
+      <input name="cantidad" type="number" min="1" value="1" required
+        style="width:100%;padding:12px;margin:8px 0 15px;background:#11131d;color:white;border:1px solid #ff2339">
+
+      <label>PRECIO UNITARIO (L)</label>
+      <input name="precio_unitario" type="number" min="0" step="0.01" required
+        style="width:100%;padding:12px;margin:8px 0 15px;background:#11131d;color:white;border:1px solid #ff2339">
+
+      <div style="display:flex;gap:12px;justify-content:flex-end">
+        <button type="button" onclick="cerrarProducto()">Cancelar</button>
+        <button type="submit">GUARDAR PRODUCTO</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function abrirProducto(ordenId) {
+  document.getElementById("productoForm").action =
+    "/producto/" + ordenId + "/";
+  document.getElementById("productoModal").classList.add("show");
+}
+
+function cerrarProducto() {
+  document.getElementById("productoModal").classList.remove("show");
+}
+
+// Agregar boton de producto a cada orden
+document.querySelectorAll("tbody tr").forEach(fila => {
+  const ver = fila.querySelector(".actions [data-id]");
+  const acciones = fila.querySelector(".actions");
+
+  if (ver && acciones) {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "action";
+    boton.textContent = "＋";
+    boton.title = "Agregar producto y calcular total";
+    boton.onclick = () => abrirProducto(ver.dataset.id);
+    acciones.appendChild(boton);
+  }
+});
+</script>
+
+</body></html>
+
